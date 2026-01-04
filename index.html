@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Efraim Waruwu | Network • Web • Linux</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Personal Portfolio Network, Web, and Linux">
+  <meta name="keywords" content="Network Engineer, Linux, Web Developer, Mikrotik">
+  <meta name="author" content="Efraim Waruwu">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <style>
+    
+    body {
+      overflow-x: hidden;
+    }
+
+    /* ===== DOWNLOAD CV BUTTON ===== */
+    .btn-cv {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 25px;
+      padding: 14px 32px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      z-index: 1;
+    }
+
+    .btn-cv .cv-icon {
+      font-size: 16px;
+      transition: transform 0.4s ease;
+    }
+
+    .btn-cv .btn-background {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #00e0ff, #0066ff);
+      transform: translateX(-100%);
+      transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+      z-index: -1;
+    }
+
+    .btn-cv:hover {
+      border-color: transparent;
+      box-shadow: 0 20px 50px rgba(0, 224, 255, 0.4);
+    }
+
+    .btn-cv:hover .btn-background {
+      transform: translateX(0);
+    }
+
+    .btn-cv:hover .cv-icon {
+      transform: translateY(-3px);
+    }
+
+    .btn-cv:active {
+      transform: scale(0.96);
+    }
+
+    /* ===== ABOUT CLICK BOX ===== */
+    .click {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .click p {
+      background: linear-gradient(145deg, #0e0e0e, #161616);
+      padding: 30px 35px;
+      border-radius: 16px;
+      font-size: 15px;
+      line-height: 1.9;
+      color: #dcdcdc;
+      position: relative;
+      transition: all 0.6s ease;
+      border: 1px solid rgba(0, 224, 255, 0.25);
+    }
+
+    .click p:hover {
+      color: #ffffff;
+      transform: translateY(-6px);
+      box-shadow:
+        0 0 15px rgba(0, 255, 166, 0.25),
+        0 0 40px rgba(0, 224, 255, 0.15),
+        inset 0 0 10px rgba(0, 224, 255, 0.08);
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .skills-title {
+      font-size: 32px;
+      margin-bottom: 50px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .skill-card {
+      background: linear-gradient(145deg, #0c0c0c, #151515);
+      border-radius: 16px;
+      padding: 30px 20px;
+      transition: all 0.5s ease;
+      cursor: pointer;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px rgba(0, 224, 255, 0.25);
+    }
+
+    .skill-card img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    .skill-links a {
+      display: inline-block;
+      margin: 8px;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(135deg, #00e0ff, #0077ff);
+      transition: 0.3s;
+    }
+
+    .skill-links a:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+        line-height: 1.4;
+      }
+
+      .btn-cv {
+        padding: 12px 26px;
+        font-size: 12px;
+      }
+
+      .click p {
+        font-size: 14px;
+        padding: 22px;
+      }
+
+      .skills-title {
+        font-size: 26px;
+      }
+    }
+  </style>
+  </style>
+
+<div class="device-notification">
+  <a class="device-notification--logo" href="#0">
+    <img src="assets/img/logo.png" alt="Logo">
+    <p>Portfolio</p>
+  </a>
+  <p class="device-notification--message">
+    Please rotate your device or use a larger screen for better experience.
+  </p>
+</div>
+
+<div class="perspective effect-rotate-left">
+  <div class="container">
+    <div class="outer-nav--return"></div>
+
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+
+        <!-- HEADER -->
+        <header class="header">
+          <a class="header--logo" href="#0">
+            
+          </a>
+          <button class="header--cta cta">Hire Me</button>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+
+        <!-- SIDE NAV -->
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Home</span></li>
+            <li><span>Skills</span></li>
+            <li><span>About</span></li>
+            <li><span>Contact</span></li>
+            <li><span>Hire Me</span></li>
+          </ul>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <ul class="l-main-content main-content">
+
+          <!-- HOME -->
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <h1>
+                  I am<br>
+                  Efraim Waruwu<br>
+                  <h2>Network | Web</h2>
+                </h1>
+              <a
+  href="assets/document/AtsPorto (1).png"
+  target="_blank"
+  style="text-decoration:none;"
+>
+  <button class="btn-cv" id="downloadCvBtn">
+    <span class="cv-icon">📄      </span>
+    <span class="cv-text">Read CV</span>
+    <span class="btn-background"></span>
+  </button>
+</a>
+
+
+
+
+
+
+ <style>
+  /* ===== DOWNLOAD CV BUTTON ===== */
+.btn-cv {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px; /* jarak dari tombol Konsultan IT */
+  padding: 14px 32px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.btn-cv .cv-icon {
+  font-size: 16px;
+  transition: transform 0.4s ease;
+}
+
+.btn-cv .btn-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #00e0ff, #0066ff);
+  transform: translateX(-100%);
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: -1;
+}
+
+/* HOVER */
+.btn-cv:hover {
+  border-color: transparent;
+  box-shadow: 0 20px 50px rgba(0, 224, 255, 0.4);
+}
+
+.btn-cv:hover .btn-background {
+  transform: translateX(0);
+}
+
+.btn-cv:hover .cv-icon {
+  transform: translateY(-3px);
+}
+
+/* CLICK */
+.btn-cv:active {
+  transform: scale(0.96);
+}
+</style>
+                
+                <img src="assets/img/introduction-visual.png" alt="Intro">
+              </div>
+
+
+    <div class="click">
+  <p>
+    I am Efraim Waruwu, an Informatics undergraduate student (5th semester) at Universitas Kristen Immanuel. I have experience in network configuration, web development, and Linux systems, and completed an internship as a Junior Technician at Radio Republik Indonesia (RRI).
+  </p>
+</div>
+
+
+
+<style>
+  .click {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.click p {
+  background: linear-gradient(145deg, #0e0e0e, #161616);
+  padding: 30px 35px;
+  border-radius: 16px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #dcdcdc;
+  position: relative;
+  transition: all 0.6s ease;
+  cursor: default;
+  border: 1px solid rgba(0, 34, 255, 0.216);
+}
+
+/* === GLOW EFFECT === */
+.click p:hover {
+  color: #ffffff;
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 15px rgba(0, 255, 166, 0.25),
+    0 0 40px rgba(0, 224, 255, 0.15),
+    inset 0 0 10px rgba(0, 224, 255, 0.08);
+  border-color: rgba(0, 224, 255, 0.35);
+}
+
+/* === ANIMATED LIGHT LINE === */
+.click p::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(46, 13, 99, 0.466),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.click p:hover::before {
+  opacity: 1;
+}
+
+/* === MOBILE FRIENDLY === */
+@media (max-width: 768px) {
+  .click p {
+    padding: 24px;
+    font-size: 14px;
+  }
+}
+
+</style>
+
+  <!-- SKILLS SECTION -->
+<li class="l-section section section-skills">
+  <div class="skills-container">
+    <h2 class="skills-title">Main Skills</h2>
+
+    <div class="skills-grid">
+
+      <!-- NETWORK -->
+<div class="skill-card">
+  <img src="assets/img/work-victory.png" alt="Network">
+  <h3>Mikrotik</h3>
+  <p>
+    Routing, Wireless, Hotspot, Firewall, Bandwidth Management (Simple Queue),
+    Dynamic Routing (RIP), VoIP, and network troubleshooting
+  </p>
+  <p class="skill-links">
+    <a href="#" downloadf>📄 Download PDF</a>
+    <a href="#" target="_blank">▶ Watch Video</a>
+  </p>
+</div>
+
+<!-- WEB -->
+<div class="skill-card">
+  <img src="assets/img/work-metiew-smith.jpg" alt="Web Development">
+  <h3>Web Development</h3>
+  <p>
+    Frontend & Backend using Laravel, REST API,
+    Bootstrap UI, MySQL, and JavaScript fundamentals
+  </p>
+  <p class="skill-links">
+    <a href="#" download>📄 Download PDF</a>
+    <a href="#" target="_blank">▶ Watch Video</a>
+  </p>
+</div>
+
+<!-- LINUX -->
+<div class="skill-card">
+  <img src="assets/img/work-figma.png" alt="Linux">
+  <h3>Linux & Ubuntu Server</h3>
+  <p>
+    Ubuntu Server installation, Apache/Nginx/MySQL,
+    UFW & SSH security, shell scripting, system monitoring
+  </p>
+  <p class="skill-links">
+    <a href="#" download>📄 Download PDF</a>
+    <a href="#" target="_blank">▶ Watch Video</a>
+  </p>
+</div>
+
+<!-- FIGMA -->
+<div class="skill-card">
+  <img src="assets/img/figma.png" alt="Figma">
+  <h3>UI/UX Design (Figma)</h3>
+  <p>
+    UI/UX design, wireframing, prototyping,
+    web & mobile interface, design to HTML
+  </p>
+  <p class="skill-links">
+    <a href="#" download>📄 Download PDF</a>
+    <a href="#" target="_blank">▶ Watch Video</a>
+  </p>
+</div>
+
+
+    </div>
+  </div>
+</li>
+
+
+
+
+          <!-- ABOUT -->
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2>
+                  Passionate<br>
+                  in Technology<br>
+                  and Learning<br>
+                  New Things
+                </h2>
+                <img src="assets/img/about-visual.png" alt="About">
+              </div>
+
+              <div class="about--options">
+                <a href="#0"><h3>Network</h3></a>
+                <a href="#0"><h3>Web</h3></a>
+                <a href="#0"><h3>Linux</h3></a>
+              </div>
+            </div>
+          </li>
+
+          <!-- CONTACT -->
+          <li class="l-section section">
+            <div class="contact">
+              <div class="contact--lockup">
+                <div class="gambar-peta" ><img src="assets/img/contact-visual.jpg" width="700px" height="500px"></div>
+                <style>
+                  .gambar-peta{
+
+  overflow: hidden;
+}
+
+.gambar-peta img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* overlay gelap */
+.gambar-peta::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+ 
+  pointer-events: none;
+}
+</style>
+
+                  
+                </style>
+                <div class="modal">
+                  <div class="modal--information">
+                    <p>Indonesia</p>
+                     <a href="mailto:basewaruwudata@gmail.com">
+    basewaruwudata@gmail.com
+  </a>
+
+  <a href="tel:+628126573568">
+    +62 812 6573 568
+  </a>
+                  </div>
+                  <ul class="modal--options">
+                    <li><a href="https://github.com/efraim20005">GitHub</a></li>
+                    <li>
+  <a href="https://linkedin.com/in/efraim-waruwu" target="_blank" rel="noopener noreferrer">
+    LinkedIn
+  </a>
+</li>
+
+                    <li>
+  <a href="mailto:efraim.waruwu@mail.ukrim.ac.id">Email</a>
+</li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- HIRE -->
+          <li class="l-section section">
+            <div class="hire">
+              <h2>Work With Me</h2>
+              <form class="work-request">
+                <div class="work-request--information">
+                  <div class="information-name">
+                    <input id="name" type="text">
+                    <label for="name">Name</label>
+                  </div>
+                  <div class="information-email">
+                    <input id="email" type="email">
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+                <input type="submit" value="Send Message">
+              </form>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <ul class="outer-nav">
+    <li class="is-active">Home</li>
+    <li>Skills</li>
+    <li>About</li>
+    <li>Contact</li>
+    <li>Hire Me</li>
+  </ul>
+</div>
+
+
+
+
+<style>
+  /* ===== SKILLS CARD LAYOUT ===== */
+.section-skills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-container {
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 32px;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* ===== CARD ===== */
+.skill-card {
+  background: linear-gradient(145deg, #0c0c0c, #151515);
+  border-radius: 16px;
+  padding: 30px 20px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease;
+}
+
+.skill-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.skill-card p {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* ===== HOVER EFFECT ===== */
+.skill-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0, 224, 255, 0.25);
+}
+
+.skill-card:hover img {
+  transform: scale(1.15) rotate(-3deg);
+}
+
+/* ===== CLICK FOCUS ===== */
+.skill-card.active {
+  transform: scale(1.08);
+  box-shadow: 0 30px 80px rgba(0, 224, 255, 0.45);
+  z-index: 10;
+}
+
+.skill-card.inactive {
+  opacity: 0.35;
+  transform: scale(0.95);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .skills-title {
+    font-size: 26px;
+  }
+/* ===== LINK CONTAINER ===== */
+.skill-links {
+  margin-top: 18px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== BASE LINK ===== */
+.skill-link {
+  position: relative;
+  padding: 8px 18px;
+  font-size: 13px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #fff;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  backdrop-filter: blur(6px);
+}
+
+/* ===== PDF STYLE ===== */
+.skill-link.pdf {
+  background: linear-gradient(135deg, #00e0ff, #0077ff);
+}
+
+/* ===== VIDEO STYLE ===== */
+.skill-link.video {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+/* ===== HOVER ===== */
+.skill-link:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* ===== SHINE EFFECT ===== */
+.skill-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.skill-link:hover::before {
+  left: 120%;
+}
+
+/* ===== CLICK RIPPLE ===== */
+.skill-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.25);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-link:active::after {
+  opacity: 1;
+}
+
+}
+
+</style>
+<script>
+  const cards = document.querySelectorAll('.skill-card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+
+      cards.forEach(c => {
+        c.classList.remove('active');
+        c.classList.add('inactive');
+      });
+
+      card.classList.add('active');
+      card.classList.remove('inactive');
+    });
+  });
+
+
+  document.querySelectorAll('.skill-link').forEach(link => {
+    link.addEventListener('click', () => {
+      link.style.transform = 'scale(0.92)';
+      setTimeout(() => {
+        link.style.transform = '';
+      }, 150);
+    });
+  });
+</script>
+
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+</body>
+</html>
